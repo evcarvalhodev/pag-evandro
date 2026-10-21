@@ -1,81 +1,84 @@
 import { useRef, useState, useCallback, useEffect } from "react";
-import { TrendingUp, ArrowUpRight, Star, Rocket, Infinity, Target, Package, Gem } from "lucide-react";
+import { TrendingUp, ArrowUpRight, Star, Rocket, Car, Database, Handshake } from "lucide-react";
 import { Section } from "@/components/Section";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
+
+interface Metric {
+  label: string;
+  value: string;
+}
 
 interface Case {
   tag: string;
   tagColor: string;
   niche: string;
-  roas: string;
-  cpl: string;
-  conversion: string;
-  revenue: string;
+  metrics: Metric[];
   resultLine: string;
   period: string;
+  scope: string;
   icon: React.ReactNode;
 }
 
 const cases: Case[] = [
   {
-    tag: "Lançamento",
+    tag: "Tráfego pago",
     tagColor: "bg-electric/20 text-electric ring-1 ring-electric/30",
-    niche: "Mentoria de negócios digitais",
-    roas: "4.8x",
-    cpl: "R$ 6,40",
-    conversion: "3.2%",
-    revenue: "R$ 187k",
-    period: "21 dias de campanha",
-    resultLine: "R$ 38k investidos viraram R$ 187k em receita — sem queimar lista nem audiência.",
-    icon: <Rocket className="h-5 w-5 text-electric" />,
+    niche: "Conquista Autos",
+    metrics: [
+      { label: "Leads/mês", value: "500–800" },
+      { label: "Canal", value: "Meta Ads" },
+      { label: "Segmento", value: "Automotivo" },
+      { label: "Status", value: "Ativo" },
+    ],
+    period: "Cliente atual",
+    resultLine: "Captação contínua de leads pra loja, com custo por lead que já chegou a poucos reais.",
+    scope: "Campanhas + Otimização",
+    icon: <Car className="h-5 w-5 text-electric" />,
   },
   {
-    tag: "Perpétuo",
+    tag: "Infoproduto",
+    tagColor: "bg-gold/20 text-gold ring-1 ring-gold/30",
+    niche: "Infoproduto próprio",
+    metrics: [
+      { label: "Faturamento", value: "R$ 200k+" },
+      { label: "Ano", value: "2022" },
+      { label: "Canal", value: "Tráfego" },
+      { label: "Modelo", value: "Digital" },
+    ],
+    period: "2022",
+    resultLine: "Oferta, página, copy e tráfego feitos por mim. Um único produto passou dos R$ 200 mil.",
+    scope: "Oferta + Página + Ads",
+    icon: <Rocket className="h-5 w-5 text-gold" />,
+  },
+  {
+    tag: "Produto próprio",
     tagColor: "bg-whatsapp/20 text-whatsapp ring-1 ring-whatsapp/30",
-    niche: "Academia Energym",
-    roas: "3.6x",
-    cpl: "R$ 4,90",
-    conversion: "2.8%",
-    revenue: "R$ 92k/mês",
-    period: "Rodando há 4 meses",
-    resultLine: "Estrutura estável rodando R$ 25k/mês em ads e devolvendo +R$ 90k em vendas recorrentes.",
-    icon: <Infinity className="h-5 w-5 text-whatsapp" />,
+    niche: "Carvalho CRM",
+    metrics: [
+      { label: "Canal", value: "WhatsApp" },
+      { label: "IA", value: "Agenda + Pix" },
+      { label: "Nicho", value: "Clínicas" },
+      { label: "Status", value: "Produção" },
+    ],
+    period: "Em produção",
+    resultLine: "IA que atende no WhatsApp, recebe o Pix, confere o comprovante e marca a consulta sozinha.",
+    scope: "Desenvolvimento + Implantação",
+    icon: <Database className="h-5 w-5 text-whatsapp" />,
   },
   {
-    tag: "VSL + Webinar",
-    tagColor: "bg-gold/20 text-gold ring-1 ring-gold/30",
-    niche: "Coaching de alta performance",
-    roas: "5.1x",
-    cpl: "R$ 8,20",
-    conversion: "4.1%",
-    revenue: "R$ 134k",
-    period: "1 ciclo de 14 dias",
-    resultLine: "VSL + página otimizada baixaram o CPL em 47% e dobraram a taxa de conversão do webinar.",
-    icon: <Target className="h-5 w-5 text-gold" />,
-  },
-  {
-    tag: "E-commerce",
+    tag: "Parceria",
     tagColor: "bg-electric/20 text-electric ring-1 ring-electric/30",
-    niche: "DJ para festas",
-    roas: "3.9x",
-    cpl: "R$ 3,80",
-    conversion: "3.5%",
-    revenue: "R$ 210k",
-    period: "3 meses de operação",
-    resultLine: "Funil otimizado com upsell elevou o ticket médio em 62% e reduziu custo por venda.",
-    icon: <Package className="h-5 w-5 text-electric" />,
-  },
-  {
-    tag: "High Ticket",
-    tagColor: "bg-gold/20 text-gold ring-1 ring-gold/30",
-    niche: "Consultoria financeira",
-    roas: "6.2x",
-    cpl: "R$ 12,50",
-    conversion: "5.3%",
-    revenue: "R$ 320k",
-    period: "30 dias de campanha",
-    resultLine: "Página de aplicação + qualificação automática geraram 48 calls com taxa de 38% de fechamento.",
-    icon: <Gem className="h-5 w-5 text-gold" />,
+    niche: "V10 Digital",
+    metrics: [
+      { label: "Produto", value: "V10-CRM" },
+      { label: "Base", value: "Carvalho" },
+      { label: "Modelo", value: "Revenda" },
+      { label: "Status", value: "Ativa" },
+    ],
+    period: "Parceria ativa",
+    resultLine: "Minha tecnologia de CRM roda como V10-CRM, revendida pela agência parceira V10 Digital.",
+    scope: "White label + Parceria",
+    icon: <Handshake className="h-5 w-5 text-electric" />,
   },
 ];
 
@@ -149,16 +152,15 @@ export function Cases() {
         <div className="relative mx-auto max-w-3xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-electric/25 bg-electric/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-electric">
             <Star className="h-3 w-3" fill="currentColor" />
-            Cases reais
+            Portfólio
           </span>
           <h2 className="mt-6 text-balance font-display text-3xl font-bold leading-[1.05] text-white md:text-5xl lg:text-6xl">
-            Números que{" "}
-            <span className="gradient-text-animated">cabem</span>{" "}
-            no extrato.
+            Projetos que{" "}
+            <span className="gradient-text-animated">falam</span>{" "}
+            por mim.
           </h2>
           <p className="mx-auto mt-5 max-w-xl text-pretty text-base text-dark-muted md:text-lg">
-            Resultados de projetos reais entregues nos últimos 12 meses, em diferentes nichos e
-            modelos de venda.
+            Clientes, produtos próprios e parcerias. Tráfego, CRM e IA aplicados em negócios de verdade.
           </p>
         </div>
       </RevealOnScroll>
@@ -217,10 +219,9 @@ export function Cases() {
                     </h3>
 
                     <div className="mt-4 grid grid-cols-2 gap-2">
-                      <MetricCard label="ROAS" value={c.roas} accent="electric" />
-                      <MetricCard label="CPL" value={c.cpl} accent="whatsapp" />
-                      <MetricCard label="Conversão" value={c.conversion} accent="electric" />
-                      <MetricCard label="Receita" value={c.revenue} accent="whatsapp" />
+                      {c.metrics.map((m, j) => (
+                        <MetricCard key={j} label={m.label} value={m.value} accent={j % 3 === 0 ? "electric" : "whatsapp"} />
+                      ))}
                     </div>
 
                     <div className="mt-4 flex items-start gap-2.5 rounded-xl border border-white/[0.06] bg-white/[0.03] p-3.5">
@@ -232,7 +233,7 @@ export function Cases() {
                   </div>
 
                   <div className="mt-auto flex items-center justify-between border-t border-white/[0.06] px-5 py-3 text-xs text-dark-muted">
-                    <span className="font-medium">Página + Ads + Otimização</span>
+                    <span className="font-medium">{c.scope}</span>
                     <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-electric" />
                   </div>
                 </article>
@@ -243,8 +244,7 @@ export function Cases() {
       </RevealOnScroll>
 
       <p className="relative mx-auto mt-10 max-w-xl text-center text-xs text-dark-muted">
-        * Números reais de projetos entregues. Nomes preservados sob NDA — relato detalhado no
-        WhatsApp.
+        * Números variam conforme verba e sazonalidade. Detalhes de cada projeto no WhatsApp.
       </p>
     </Section>
   );

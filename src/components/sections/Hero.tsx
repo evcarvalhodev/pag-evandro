@@ -20,10 +20,10 @@ export function Hero() {
           ev/2026
         </div>
         <a
-          href="#pricing"
+          href="#cases"
           className="hidden rounded-full border border-white/10 bg-white/5 px-5 py-2 text-sm font-medium text-dark-foreground/90 backdrop-blur transition-all duration-300 hover:border-electric-glow/40 hover:bg-white/10 hover:shadow-[0_0_24px_-4px_hsl(var(--electric)/0.4)] md:inline-flex"
         >
-          Ver pacote →
+          Ver trabalhos →
         </a>
       </nav>
 
@@ -52,7 +52,7 @@ export function Hero() {
           </div>
           <div className="float-tag-b absolute -bottom-1 -left-2 hidden items-center gap-1.5 rounded-full border border-white/10 bg-dark/80 px-3 py-1 text-[10px] font-mono uppercase tracking-wider text-electric-glow backdrop-blur md:flex">
             <Sparkles className="h-3 w-3" />
-            dev + ads
+            ads · crm · ia
           </div>
         </div>
 
@@ -62,7 +62,7 @@ export function Hero() {
             Evandro Carvalho
           </h2>
           <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-dark-muted md:text-[11px]">
-            full-stack <span className="text-electric-glow">×</span> performance ads
+            tráfego <span className="text-electric-glow">×</span> crm <span className="text-electric-glow">×</span> ia
           </p>
         </div>
 
@@ -79,18 +79,18 @@ export function Hero() {
         <h1 className="mx-auto mt-8 w-full max-w-4xl text-center font-display text-[28px] font-black leading-[1.05] tracking-[-0.03em] drop-shadow-[0_0_60px_hsl(var(--electric)/0.3)] sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[60px]">
           <span className="block">
             <span className="reveal-mask">
-              <span className="reveal-line">Sua empresa merece uma</span>
+              <span className="reveal-line">Eu construo a</span>
             </span>
           </span>
           <span className="block">
             <span className="reveal-mask">
-              <span className="reveal-line delay-100">estrutura que vende</span>
+              <span className="reveal-line delay-100">máquina de vendas</span>
             </span>
           </span>
           <span className="block">
             <span className="reveal-mask">
               <span className="reveal-line delay-200 relative inline-block">
-                <span className="gradient-text-animated drop-shadow-[0_0_50px_hsl(var(--electric)/0.6)]">no automático.</span>
+                <span className="gradient-text-animated drop-shadow-[0_0_50px_hsl(var(--electric)/0.6)]">do seu negócio.</span>
                 <span className="font-serif absolute -right-2 -top-1 text-xl italic text-whatsapp-glow md:-right-4 md:-top-4 md:text-4xl">*</span>
               </span>
             </span>
@@ -99,22 +99,23 @@ export function Hero() {
 
         {/* Subhead */}
         <p className="animate-fade-up delay-500 mx-auto mt-6 max-w-xl text-pretty text-sm leading-relaxed text-dark-foreground/65 md:max-w-2xl md:text-lg md:leading-relaxed">
-          Construo <span className="text-dark-foreground">páginas de venda</span> + estrutura de
-          <span className="text-dark-foreground"> tráfego pago</span> para infoprodutores que já faturam,
-          mas perdem dinheiro em conversão. No ar em{" "}
-          <span className="font-mono text-whatsapp-glow">7 dias</span>.
+          <span className="font-mono text-whatsapp-glow">5 anos</span> no digital unindo{" "}
+          <span className="text-dark-foreground">tráfego pago</span>,{" "}
+          <span className="text-dark-foreground">CRM</span> e{" "}
+          <span className="text-dark-foreground">inteligência artificial</span> pra transformar
+          atenção em lead e lead em venda.
         </p>
 
         {/* CTAs */}
         <div className="animate-fade-up delay-700 mt-8 flex flex-col items-center justify-center gap-3 md:flex-row md:gap-4">
           <WhatsAppButton size="lg" glow>
-            Quero uma estrutura assim
+            Falar comigo
           </WhatsAppButton>
           <a
             href="#cases"
             className="group inline-flex items-center gap-2 rounded-full px-5 py-3 text-sm font-medium text-dark-foreground/70 transition-colors hover:text-dark-foreground"
           >
-            Ver cases reais
+            Ver trabalhos
             <ArrowDown className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-1" />
           </a>
         </div>
@@ -126,10 +127,10 @@ export function Hero() {
 
         {/* Stats strip */}
         <div className="animate-fade-up delay-900 mt-14 grid w-full grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl md:mt-20 md:grid-cols-4 md:rounded-[28px]">
-          <Stat value="R$ 100Mil+" label="gerenciados em ads" />
-          <Stat value="40+" label="páginas no ar" />
-          <Stat value="7 dias" label="do briefing ao live" />
-          <Stat value="3.4x" label="ROAS médio" />
+          <Stat value="5 anos" label="no mercado digital" />
+          <Stat value="R$ 200k+" label="com um infoproduto" />
+          <Stat value="800" label="leads/mês num cliente" />
+          <Stat value="3 frentes" label="ads · crm · ia" />
         </div>
       </div>
     </section>

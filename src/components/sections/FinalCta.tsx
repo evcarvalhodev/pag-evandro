@@ -13,21 +13,21 @@ export function FinalCta() {
         <RevealOnScroll variant="fade-down">
           <div className="mx-auto mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium text-dark-foreground/80 backdrop-blur">
             <Sparkles className="h-3 w-3 text-gold" />
-            Cresça seu número de Leads
+            Vamos conversar
           </div>
         </RevealOnScroll>
 
         <RevealOnScroll variant="blur" delay={100}>
           <h2 className="text-balance font-display text-2xl font-bold leading-tight md:text-4xl lg:text-5xl">
-            Seu próximo lançamento merece uma estrutura{" "}
+            Seu negócio merece uma máquina de vendas{" "}
             <span className="font-serif-display gradient-text-brand">à altura.</span>
           </h2>
         </RevealOnScroll>
 
         <RevealOnScroll variant="fade-up" delay={200}>
           <p className="mx-auto mt-7 max-w-xl text-pretty text-base text-dark-foreground/70 md:text-xl">
-            15 minutos no WhatsApp e você sai com um diagnóstico claro do que está travando seu
-            faturamento — independente de fechar comigo ou não.
+            15 minutos no WhatsApp e você sai com um diagnóstico claro do que está travando suas
+            vendas, independente de fechar comigo ou não.
           </p>
         </RevealOnScroll>
 

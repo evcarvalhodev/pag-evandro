@@ -96,7 +96,7 @@ export function SocialProof() {
               aprova.
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-pretty text-base text-dark-muted md:text-lg">
-              Depoimentos reais de clientes que escalaram resultados com páginas e tráfego otimizados.
+              Depoimentos reais de quem já trabalhou comigo.
             </p>
           </div>
         </RevealOnScroll>

@@ -1,53 +1,53 @@
-import { Compass, PenTool, Crosshair, Rocket, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Compass, Workflow, Crosshair, Rocket, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Section } from "@/components/Section";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 
 const steps = [
   {
-    days: "Dia 1 — 2",
+    days: "Etapa 01",
     label: "Diagnóstico",
-    title: "Mergulho no produto, no público e na oferta",
-    desc: "Reunião estratégica de 60 min, análise da concorrência e desenho do funil ideal pro seu modelo de venda.",
+    title: "Entendo o seu negócio antes de propor qualquer coisa",
+    desc: "Conversa estratégica, análise de como você vende hoje e onde os leads e as vendas estão se perdendo.",
     icon: Compass,
     color: "from-[hsl(230,90%,62%)] to-[hsl(220,95%,70%)]",
     accent: "hsl(var(--electric))",
-    highlights: ["Análise de mercado", "Funil estratégico"],
+    highlights: ["Análise do funil", "Gargalos mapeados"],
   },
   {
-    days: "Dia 3 — 4",
-    label: "Construção",
-    title: "Página de vendas com copy que ataca a dúvida certa",
-    desc: "Wireframe, copy persuasiva, design responsivo e integração com checkout (Hotmart, Kiwify ou Eduzz).",
-    icon: PenTool,
+    days: "Etapa 02",
+    label: "Estratégia",
+    title: "Desenho a solução certa pro seu momento",
+    desc: "Tráfego, CRM, IA ou tudo junto. Você recebe um plano claro do que vai ser feito, em que ordem e por quê.",
+    icon: Workflow,
     color: "from-[hsl(270,80%,60%)] to-[hsl(280,85%,70%)]",
     accent: "hsl(270,80%,60%)",
-    highlights: ["Copy persuasiva", "Design responsivo"],
+    highlights: ["Plano de ação", "Metas definidas"],
   },
   {
-    days: "Dia 5 — 6",
-    label: "Tráfego",
-    title: "Setup completo das campanhas Meta Ads",
-    desc: "Estrutura de campanhas, segmentação por interesse e lookalike, 3 variações de criativo e pixel calibrado.",
+    days: "Etapa 03",
+    label: "Execução",
+    title: "Coloco a máquina pra rodar",
+    desc: "Campanhas no ar, CRM implantado, automações com IA configuradas e tudo integrado num fluxo só.",
     icon: Crosshair,
     color: "from-[hsl(38,92%,55%)] to-[hsl(30,95%,60%)]",
     accent: "hsl(var(--gold))",
-    highlights: ["Segmentação avançada", "Pixel calibrado"],
+    highlights: ["Ads + CRM + IA", "Tudo integrado"],
   },
   {
-    days: "Dia 7",
-    label: "Live",
-    title: "Tudo no ar, rodando e gerando vendas",
-    desc: "Campanha publicada, dashboard de acompanhamento entregue e os primeiros 7 dias de otimização por minha conta.",
+    days: "Etapa 04",
+    label: "Otimização",
+    title: "Acompanho os números e ajusto toda semana",
+    desc: "Custo por lead, taxa de resposta, vendas. Você acompanha os resultados e eu otimizo o que não estiver performando.",
     icon: Rocket,
     color: "from-[hsl(145,60%,45%)] to-[hsl(145,70%,55%)]",
     accent: "hsl(var(--whatsapp))",
-    highlights: ["Dashboard entregue", "7 dias de otimização"],
+    highlights: ["Relatórios", "Melhoria contínua"],
   },
 ];
 
 export function Process() {
   return (
-    <Section className="relative overflow-hidden">
+    <Section id="processo" className="relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute -right-40 top-20 h-[500px] w-[500px] rounded-full bg-[hsl(var(--electric)/0.04)] blur-[120px]" />
         <div className="absolute -left-40 bottom-20 h-[400px] w-[400px] rounded-full bg-[hsl(var(--whatsapp)/0.04)] blur-[100px]" />
@@ -58,15 +58,15 @@ export function Process() {
           <div className="mx-auto mb-5 inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 shadow-soft">
             <div className="h-1.5 w-1.5 rounded-full bg-[hsl(var(--electric))] animate-pulse" />
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-electric">
-              Processo
+              Como eu trabalho
             </span>
           </div>
           <h2 className="text-balance font-display text-3xl font-bold leading-[1.05] md:text-5xl lg:text-6xl">
-            Do briefing ao primeiro
+            Do diagnóstico ao
             <br />
-            checkout em{" "}
+            resultado,{" "}
             <span className="relative inline-block">
-              <span className="font-serif-display text-whatsapp">7 dias.</span>
+              <span className="font-serif-display text-whatsapp">sem enrolação.</span>
               <svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 12" fill="none">
                 <path d="M2 8 C50 2, 150 2, 198 8" stroke="hsl(var(--whatsapp))" strokeWidth="3" strokeLinecap="round" opacity="0.5" />
               </svg>
@@ -139,7 +139,7 @@ export function Process() {
             <div className="inline-flex items-center gap-2 rounded-full border border-[hsl(var(--whatsapp)/0.3)] bg-[hsl(var(--whatsapp)/0.06)] px-5 py-2.5 shadow-soft">
               <Rocket className="h-4 w-4 text-whatsapp" />
               <span className="text-sm font-semibold text-foreground">
-                Resultado: funil completo no ar
+                Resultado: máquina de vendas rodando
               </span>
             </div>
           </div>

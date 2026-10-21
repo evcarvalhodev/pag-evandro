@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 const PHONE = "5512992275476";
 const DEFAULT_MSG =
-  "Oi Evandro, vi seu site e quero entender como escalar meu infoproduto com página + tráfego.";
+  "Oi Evandro, vi seu portfólio e quero conversar sobre um projeto.";
 
 export function buildWhatsAppLink(message: string = DEFAULT_MSG) {
   return `https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`;

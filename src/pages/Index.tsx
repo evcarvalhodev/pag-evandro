@@ -3,11 +3,11 @@ import { Hero } from "@/components/sections/Hero";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { CursorGlow } from "@/components/CursorGlow";
 
-const ProblemSolution = lazy(() => import("@/components/sections/ProblemSolution").then(m => ({ default: m.ProblemSolution })));
+const About = lazy(() => import("@/components/sections/About").then(m => ({ default: m.About })));
+const CrmShowcase = lazy(() => import("@/components/sections/CrmShowcase").then(m => ({ default: m.CrmShowcase })));
 const Cases = lazy(() => import("@/components/sections/Cases").then(m => ({ default: m.Cases })));
 const SocialProof = lazy(() => import("@/components/sections/SocialProof").then(m => ({ default: m.SocialProof })));
 const Process = lazy(() => import("@/components/sections/Process").then(m => ({ default: m.Process })));
-const Pricing = lazy(() => import("@/components/sections/Pricing").then(m => ({ default: m.Pricing })));
 const Faq = lazy(() => import("@/components/sections/Faq").then(m => ({ default: m.Faq })));
 const FinalCta = lazy(() => import("@/components/sections/FinalCta").then(m => ({ default: m.FinalCta })));
 const Footer = lazy(() => import("@/components/sections/Footer").then(m => ({ default: m.Footer })));
@@ -26,11 +26,11 @@ const Index = () => {
 
       <Hero />
       <Suspense fallback={null}>
-        <ProblemSolution />
+        <About />
         <Cases />
+        <CrmShowcase />
         <SocialProof />
         <Process />
-        <Pricing />
         <Faq />
         <FinalCta />
         <Footer />

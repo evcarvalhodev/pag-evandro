@@ -10,18 +10,19 @@ const WhatsAppGlyph = ({ className }: { className?: string }) => (
 );
 
 const navLinks = [
-  { label: "Cases", href: "#cases" },
-  { label: "Provas", href: "#provas" },
-  { label: "Processo", href: "#processo" },
-  { label: "Investimento", href: "#investimento" },
+  { label: "Sobre", href: "#sobre" },
+  { label: "Portfólio", href: "#cases" },
+  { label: "Carvalho CRM", href: "#crm" },
+  { label: "Depoimentos", href: "#provas" },
+  { label: "Como trabalho", href: "#processo" },
   { label: "FAQ", href: "#faq" },
 ];
 
 const services = [
-  "Landing pages que convertem",
   "Tráfego pago Meta Ads",
-  "Pixel + tracking server-side",
-  "Otimização contínua de CPA",
+  "Carvalho CRM",
+  "Soluções com IA",
+  "Páginas e funis",
 ];
 
 export function Footer() {
@@ -51,7 +52,7 @@ export function Footer() {
                 Evandro Carvalho
               </div>
               <p className="mt-0.5 text-sm leading-relaxed text-dark-muted">
-                Páginas e tráfego para quem vende infoproduto e quer converter de verdade.
+                Tráfego, CRM e IA pra empresas que querem vender mais.
               </p>
             </div>
           </div>

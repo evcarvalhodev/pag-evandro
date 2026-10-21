@@ -9,34 +9,34 @@ import { RevealOnScroll } from "@/components/RevealOnScroll";
 
 const faqs = [
   {
-    q: "Funciona pra qualquer tipo de infoproduto?",
-    a: "Sim. Já entreguei pra mentoria 1:1, curso gravado, comunidade paga, ebook premium e consultoria de alto ticket. A estrutura muda conforme o ticket e o ciclo de venda — não existe template universal aqui.",
+    q: "Você atende qual tipo de negócio?",
+    a: "Empresas e negócios locais que precisam de mais leads e vendas, além de quem vende produto digital. Já atuei com infoproduto, loja de veículos e empresas que usam o Carvalho CRM.",
   },
   {
-    q: "Eu preciso ter o produto pronto?",
-    a: "Sim. Eu construo a estrutura de venda — página, copy, tráfego e funil. O produto, a entrega e o atendimento ficam com você. Se ainda está validando a oferta, te indico um caminho antes de começarmos.",
+    q: "Preciso contratar tudo junto (tráfego, CRM e IA)?",
+    a: "Não. Cada frente funciona sozinha. Mas o resultado é maior quando o tráfego gera o lead, o CRM organiza e a IA ajuda no atendimento e no follow-up. No diagnóstico eu te falo o que faz sentido pro seu momento.",
   },
   {
-    q: "Já tenho página rodando. Você otimiza ou refaz?",
-    a: "Depende do diagnóstico. Às vezes ajustar copy e CTAs já resolve; outras vezes a estrutura inteira está sabotando a conversão. No primeiro papo eu te falo o que faz mais sentido — sem empurrar refação quando não precisa.",
+    q: "O que é o Carvalho CRM?",
+    a: "É o CRM de atendimento por WhatsApp que eu desenvolvi. A IA responde 24h, entende áudio e foto, faz follow-up, confere comprovante de Pix e marca na agenda. Eu mesmo faço a implantação no seu negócio.",
   },
   {
-    q: "O investimento em ads já está incluso nos R$ 2.500?",
-    a: "Não. Os R$ 2.500 cobrem a construção da página + setup e gestão inicial das campanhas (7 dias). O investimento em anúncios é separado e fica direto no seu cartão Meta. Recomendo começar com R$ 50-80 por dia.",
+    q: "Quanto preciso investir em anúncios?",
+    a: "Depende do objetivo e da região. A verba de anúncios é separada do meu trabalho e vai direto pra plataforma. No primeiro papo eu te passo uma recomendação realista.",
   },
   {
-    q: "E se eu não gostar do resultado em 7 dias?",
-    a: "Se eu não entregar a página + estrutura no prazo combinado, você não paga a segunda parcela. E se em 7 dias rodando os números não baterem com o que projetamos, eu reviso a estrutura sem custo extra até ajustar.",
+    q: "Em quanto tempo vejo resultado?",
+    a: "Campanhas de tráfego começam a gerar leads nos primeiros dias. A otimização é contínua: o custo por lead tende a cair conforme os dados chegam.",
   },
   {
-    q: "Como funciona o pagamento?",
-    a: "50% pra começar e travar a vaga, 50% na entrega da página pronta. Pix, cartão em até 6x ou boleto. Nota fiscal emitida normalmente.",
+    q: "Como funciona o primeiro contato?",
+    a: "Você me chama no WhatsApp, a gente conversa uns 15 minutos e eu te digo com sinceridade se e como eu posso ajudar.",
   },
 ];
 
 export function Faq() {
   return (
-    <Section>
+    <Section id="faq">
       <RevealOnScroll variant="blur">
         <div className="mx-auto max-w-3xl text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-electric">FAQ</span>
