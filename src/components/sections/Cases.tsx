@@ -41,11 +41,11 @@ const cases: Case[] = [
     niche: "Infoproduto próprio",
     metrics: [
       { label: "Faturamento", value: "R$ 200k+" },
-      { label: "Ano", value: "2022" },
+      { label: "Ano", value: "2024" },
       { label: "Canal", value: "Tráfego" },
       { label: "Modelo", value: "Digital" },
     ],
-    period: "2022",
+    period: "2024",
     resultLine: "Oferta, página, copy e tráfego feitos por mim. Um único produto passou dos R$ 200 mil.",
     scope: "Oferta + Página + Ads",
     icon: <Rocket className="h-5 w-5 text-gold" />,

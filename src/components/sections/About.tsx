@@ -11,7 +11,7 @@ const journey = [
   {
     icon: Rocket,
     title: "R$ 200 mil+ com um único produto",
-    text: "Em 2022 um infoproduto passou dos R$ 200 mil em faturamento. Foi ali que eu entendi como uma máquina de vendas funciona de ponta a ponta.",
+    text: "Em 2024 um infoproduto passou dos R$ 200 mil em faturamento. Foi ali que eu entendi como uma máquina de vendas funciona de ponta a ponta.",
   },
   {
     icon: Database,
