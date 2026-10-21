@@ -113,7 +113,7 @@ export function Footer() {
                 <li>
                   <a href={buildWhatsAppLink()} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 transition-colors hover:text-whatsapp-glow">
                     <Phone className="h-3.5 w-3.5 shrink-0 text-whatsapp-glow" />
-                    (12) 99227-5476
+                    (12) 99185-7568
                   </a>
                 </li>
                 <li className="inline-flex items-center gap-2">

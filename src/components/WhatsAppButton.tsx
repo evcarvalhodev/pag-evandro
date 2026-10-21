@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const PHONE = "5512992275476";
+const PHONE = "5512991857568";
 const DEFAULT_MSG =
   "Oi Evandro, vi seu portfólio e quero conversar sobre um projeto.";
 
