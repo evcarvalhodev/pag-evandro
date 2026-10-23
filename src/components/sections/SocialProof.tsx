@@ -13,13 +13,6 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    name: "Vinícius DJ",
-    handle: "@djviniciusdias_",
-    avatar: "https://goupwin.com/wp-content/webp-express/webp-images/uploads/2024/08/imagem_2024-08-29_232900624.png.webp",
-    text: "Os caras são top! Fizeram umas artes pra mim de perfil e divulgação! Trabalho excelente!",
-    rating: 5,
-  },
-  {
     name: "Lucas Souza",
     handle: "@energym",
     avatar: "https://goupwin.com/wp-content/webp-express/webp-images/uploads/2024/08/imagem_2024-08-29_231811216.png.webp",
@@ -54,12 +47,6 @@ const videos: Video[] = [
     title: "Avaliação Marcos",
     youtubeId: "1j8103t0Uu8",
     thumbnail: `https://img.youtube.com/vi/1j8103t0Uu8/hqdefault.jpg`,
-  },
-  {
-    id: "3",
-    title: "Avaliação Vinícius",
-    youtubeId: "_KRZYdtAPWM",
-    thumbnail: `https://img.youtube.com/vi/_KRZYdtAPWM/hqdefault.jpg`,
   },
 ];
 
