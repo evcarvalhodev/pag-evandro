@@ -1,31 +1,16 @@
 import { useState, useCallback } from "react";
-import { Star, Quote, Play, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star, Play, X } from "lucide-react";
 import { Section } from "@/components/Section";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
 
-interface Testimonial {
-  name: string;
-  handle: string;
-  avatar: string;
-  text: string;
-  rating: number;
-}
-
-const testimonials: Testimonial[] = [
-  {
-    name: "Lucas Souza",
-    handle: "@energym",
-    avatar: "https://goupwin.com/wp-content/webp-express/webp-images/uploads/2024/08/imagem_2024-08-29_231811216.png.webp",
-    text: "Nossa, ficou muito top! Gostei de todos os vídeos, vocês são muito bons! Pode ter certeza que vou indicar vocês.",
-    rating: 5,
-  },
-  {
-    name: "João Medina",
-    handle: "@medina22personal",
-    avatar: "https://goupwin.com/wp-content/webp-express/webp-images/uploads/2024/08/imagem_2024-08-29_232112037.png.webp",
-    text: "Incrível! Os caras são fodas!! Fizeram um vídeo publicitário e criaram meu catálogo! Recomendo e vou contratar novamente!",
-    rating: 5,
-  },
+// Prints de feedbacks de clientes (destaques do Instagram), em /public/feedbacks
+const feedbacks = Array.from(
+  { length: 12 },
+  (_, i) => `/feedbacks/feedback-${String(i + 1).padStart(2, "0")}.webp`,
+);
+const feedbackRows = [
+  feedbacks.filter((_, i) => i % 2 === 0),
+  feedbacks.filter((_, i) => i % 2 === 1),
 ];
 
 interface Video {
@@ -53,17 +38,12 @@ const videos: Video[] = [
 export function SocialProof() {
   const [activeVideo, setActiveVideo] = useState(videos[0]);
   const [playing, setPlaying] = useState(false);
-  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const [openFeedback, setOpenFeedback] = useState<string | null>(null);
 
   const handleVideoSelect = useCallback((video: Video) => {
     setActiveVideo(video);
     setPlaying(false);
   }, []);
-
-  const nextTestimonial = () =>
-    setTestimonialIndex((i) => (i + 1) % testimonials.length);
-  const prevTestimonial = () =>
-    setTestimonialIndex((i) => (i - 1 + testimonials.length) % testimonials.length);
 
   return (
     <Section id="provas" className="relative overflow-hidden bg-dark-section text-dark-foreground">
@@ -83,76 +63,33 @@ export function SocialProof() {
               aprova.
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-pretty text-base text-dark-muted md:text-lg">
-              Depoimentos reais de quem já trabalhou comigo.
+              Prints reais de clientes que já compraram comigo.
             </p>
           </div>
         </RevealOnScroll>
 
         <RevealOnScroll variant="zoom" delay={150}>
-          <div className="relative mt-14">
-            <div className="mx-auto max-w-2xl">
-              <div className="glass relative overflow-hidden rounded-3xl p-6 md:p-10">
-                <Quote className="absolute right-6 top-6 h-12 w-12 text-white/[0.04] md:h-16 md:w-16" />
-
-                <div className="flex items-start gap-4">
-                  <img
-                    src={testimonials[testimonialIndex].avatar}
-                    alt={testimonials[testimonialIndex].name}
-                    className="h-14 w-14 shrink-0 rounded-full border-2 border-white/10 object-cover md:h-16 md:w-16"
-                  />
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <h4 className="font-display text-lg font-bold text-white">
-                        {testimonials[testimonialIndex].name}
-                      </h4>
-                      <span className="text-xs text-dark-muted">
-                        {testimonials[testimonialIndex].handle}
-                      </span>
-                    </div>
-                    <div className="mt-1 flex gap-0.5">
-                      {Array.from({ length: testimonials[testimonialIndex].rating }).map((_, i) => (
-                        <Star key={i} className="h-3.5 w-3.5 text-gold" fill="currentColor" />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <p className="mt-5 text-base leading-relaxed text-white/80 md:text-lg">
-                  "{testimonials[testimonialIndex].text}"
-                </p>
-
-                <div className="mt-6 flex items-center justify-between">
-                  <div className="flex gap-2">
-                    {testimonials.map((_, i) => (
-                      <button
-                        key={i}
-                        onClick={() => setTestimonialIndex(i)}
-                        className={`h-2 rounded-full transition-all duration-300 ${
-                          i === testimonialIndex
-                            ? "w-8 bg-whatsapp"
-                            : "w-2 bg-white/20 hover:bg-white/40"
-                        }`}
-                      />
-                    ))}
-                  </div>
-                  <div className="flex gap-2">
-                    <button
-                      onClick={prevTestimonial}
-                      className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:border-white/20 hover:bg-white/10 hover:text-white"
-                    >
-                      <ChevronLeft className="h-4 w-4" />
-                    </button>
-                    <button
-                      onClick={nextTestimonial}
-                      className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/70 transition-all hover:border-white/20 hover:bg-white/10 hover:text-white"
-                    >
-                      <ChevronRight className="h-4 w-4" />
-                    </button>
-                  </div>
-                </div>
+          <div className="relative -mx-4 mt-14 space-y-4 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_6%,black_94%,transparent)] md:mx-0">
+            {feedbackRows.map((row, r) => (
+              <div
+                key={r}
+                className="marquee-track flex w-max gap-4 hover:[animation-play-state:paused]"
+                style={{ animationDuration: "70s", animationDirection: r ? "reverse" : "normal" }}
+              >
+                {[...row, ...row].map((src, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setOpenFeedback(src)}
+                    className="h-72 shrink-0 overflow-hidden rounded-2xl border border-white/[0.08] bg-black/40 transition-all duration-300 hover:scale-[1.03] hover:border-whatsapp/40 md:h-96"
+                    aria-label="Ampliar feedback de cliente"
+                  >
+                    <img src={src} alt="Feedback de cliente" loading="lazy" className="h-full w-auto" />
+                  </button>
+                ))}
               </div>
-            </div>
+            ))}
           </div>
+          <p className="mt-4 text-center text-xs text-dark-muted">Toque em um print para ampliar</p>
         </RevealOnScroll>
 
         <RevealOnScroll variant="fade-up" delay={100}>
@@ -243,6 +180,17 @@ export function SocialProof() {
           </div>
         </RevealOnScroll>
       </div>
+
+      {openFeedback && (
+        <button
+          onClick={() => setOpenFeedback(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4 backdrop-blur-sm"
+          aria-label="Fechar"
+        >
+          <img src={openFeedback} alt="Feedback de cliente" className="max-h-[90vh] max-w-full rounded-2xl" />
+          <X className="absolute right-5 top-5 h-7 w-7 text-white/80" />
+        </button>
+      )}
     </Section>
   );
 }
